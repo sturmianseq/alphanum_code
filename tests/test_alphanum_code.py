@@ -26,6 +26,7 @@ def coder():
 def test_init_code(coder):
     code = coder.next_code("init code test")
     assert code == INIT_CODE
+    coder.clear_record()
 
 
 def test_next_code(coder):

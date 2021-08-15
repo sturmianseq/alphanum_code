@@ -84,6 +84,10 @@ class AlphaNumCodeManager(object):
         query = self.session.query(AlphaNumCode).order_by(AlphaNumCode.id.desc()).first()
         return query
 
+    def clear_record(self):
+        query = self.session.query(AlphaNumCode).order_by(AlphaNumCode.id.desc()).first()
+        self.session.delete(query)
+
     def next_code(self, info=None):
         """Returns new code based on last registered code in db.
 
